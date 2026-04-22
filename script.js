@@ -11,7 +11,7 @@ function whatsapp(item) {
         "Honey Comb": "Hello, I'd like to buy Honey Comb."
     };
 
-    const message = messages[item] || "Hello, I have a general inquiry.";
+    const message = messages[item] || "Hello, I have a general inquiry on The TJ Hub.";
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
