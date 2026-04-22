@@ -1,0 +1,207 @@
+/* --- GLOBAL FIXES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3b3e32;
+    color: #f7f3d5;
+    font-family: 'Lato', sans-serif;
+    padding: 40px 10%;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+.main-title {
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    color: #f7f3d5;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.hero-content { flex: 1.2; text-align: left; }
+
+.hero-image {
+    flex: 0.8;
+    background-color: #4a4e40;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- SERVICES GRID --- */
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 150px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #5a5f4d;
+}
+
+.header-row {
+    font-weight: bold;
+    color: #c9c4a5;
+    border-bottom: 2px solid #f7f3d5;
+}
+
+.center { text-align: center; }
+.right { text-align: right; }
+
+/* --- PRODUCTS & PROJECTS --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #4a4e40;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.img-container {
+    width: 100%;
+    height: 200px;
+    background: #3b3e32;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- VIDEO LANDSCAPE FIX --- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+video { 
+    width: 100%; 
+    aspect-ratio: 16 / 9; /* Forces landscape 16:9 ratio */
+    background: #000;
+    object-fit: cover; /* Ensures video fills the landscape box */
+    border-radius: 8px; 
+}
+
+/* --- FEEDBACK --- */
+blockquote {
+    border-left: 2px solid #f7f3d5;
+    padding-left: 20px;
+    margin: 0 0 30px 0;
+    font-style: italic;
+}
+
+blockquote span {
+    font-style: normal;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- BUTTONS & FOOTER --- */
+button {
+    background-color: #f7f3d5;
+    color: #3b3e32;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows buttons to wrap on tiny screens */
+}
+
+.contact-buttons button {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #5a5f4d;
+    margin: 40px 0;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+@media (max-width: 1024px) {
+    body { padding: 40px 5%; }
+    .hero { gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    .main-title { font-size: 2rem; }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content { text-align: left; }
+    .hero-image { width: 100%; height: 250px; }
+
+    .header-row { display: none; }
+    
+    .service-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 30px 0;
+    }
+
+    .service-item .center, 
+    .service-item .right { text-align: center; }
+
+    .service-item button { width: 100%; }
+
+    .contact-buttons { justify-content: center; }
+}
